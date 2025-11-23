@@ -66,3 +66,9 @@
 | **F-1. 天気データ取得** | API キー、都市名              | 環境変数 (`.env.local`)、`app/page.tsx` (検索窓の入力値) | F-3、F-4 (JSON 形式)                            |
 | **F-2. お気に入り保存** | 都市名、都市 ID               | F-1 の取得結果 (`weatherData.name` など)                 | ブラウザの `localStorage`                       |
 | **F-3. 検索結果反映**   | F-1 の JSON、F-3 のアドバイス | F-1、F-3                                                 | 画面 (`CurrentWeather.tsx` などの Props へ渡す) |
+
+## 4. 機能設計
+
+### 1. データフロー
+
+- ![データフロー](データフロー.drawio.png)
