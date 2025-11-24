@@ -45,6 +45,5 @@ export const Default: Story = {
     temperature: 25,
     unit: "C",
     weatherCondition: "Heavy Rain",
-    location: "Florida, US",
   },
 };
