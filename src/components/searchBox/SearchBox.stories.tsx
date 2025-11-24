@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 import SearchBox from "./SearchBox";
 import { useState } from "react";
 
@@ -11,8 +10,8 @@ const meta = {
   },
   tags: ["autodocs"],
   args: {
-    onChange: fn(),
-    onSearch: fn(),
+    onChange: () => {},
+    onSearch: () => {},
   },
 } satisfies Meta<typeof SearchBox>;
 
