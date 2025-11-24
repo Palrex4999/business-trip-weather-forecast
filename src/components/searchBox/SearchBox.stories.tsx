@@ -57,23 +57,3 @@ export const CustomPlaceholder: Story = {
     disabled: false,
   },
 };
-
-export const Interactive: Story = {
-  render: () => {
-    const [value, setValue] = useState("");
-
-    return (
-      <div className="space-y-4">
-        <SearchBox
-          value={value}
-          onChange={setValue}
-          onSearch={() => alert(`検索: ${value}`)}
-          placeholder="都市名を入力"
-        />
-        <div className="text-sm text-gray-600">
-          入力値: <span className="font-semibold">{value || "(なし)"}</span>
-        </div>
-      </div>
-    );
-  },
-};
