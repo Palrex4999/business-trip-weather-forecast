@@ -2,13 +2,9 @@ import { styles } from "./EnteredCities.styles";
 
 interface EnteredCitiesProps {
   city?: string | null;
-  onRemove?: () => void;
 }
 
-export default function EnteredCities({
-  city,
-  onRemove = () => {},
-}: EnteredCitiesProps) {
+export default function EnteredCities({ city }: EnteredCitiesProps) {
   if (!city) {
     return null;
   }

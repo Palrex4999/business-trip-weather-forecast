@@ -8,9 +8,6 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: {
-    onRemove: () => {},
-  },
 } satisfies Meta<typeof EnteredCities>;
 
 export default meta;
