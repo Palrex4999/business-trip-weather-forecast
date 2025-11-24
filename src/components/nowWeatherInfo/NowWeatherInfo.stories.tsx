@@ -6,9 +6,6 @@ const meta = {
   component: NowWeatherInfo,
   parameters: {
     layout: "centered",
-    backgrounds: {
-      default: "dark",
-    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof NowWeatherInfo>;
