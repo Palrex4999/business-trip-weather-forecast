@@ -17,46 +17,59 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const sampleCities = ["東京", "大阪", "名古屋", "福岡"];
-
 export const Default: Story = {
   args: {
-    cities: sampleCities,
+    city: "New York, USA",
   },
 };
 
-export const SingleCity: Story = {
+export const JapaneseCity: Story = {
   args: {
-    cities: ["東京"],
+    city: "東京",
   },
 };
 
-export const ManyCities: Story = {
+export const LongCityName: Story = {
   args: {
-    cities: ["東京", "大阪", "名古屋", "福岡", "札幌", "仙台", "広島", "神戸"],
+    city: "San Francisco, California, USA",
   },
 };
 
 export const Empty: Story = {
   args: {
-    cities: [],
+    city: null,
   },
 };
 
 export const Interactive: Story = {
   render: () => {
-    const [cities, setCities] = useState(["東京", "大阪", "名古屋", "福岡"]);
+    const [city, setCity] = useState<string | null>("Tokyo, Japan");
 
     return (
       <div className="space-y-4">
-        <EnteredCities
-          cities={cities}
-          onRemove={(city) => {
-            setCities(cities.filter((c) => c !== city));
-          }}
-        />
+        <EnteredCities city={city} onRemove={() => setCity(null)} />
+        <div className="flex gap-2">
+          <button
+            onClick={() => setCity("New York, USA")}
+            className="px-3 py-1 bg-blue-500 text-white rounded text-sm"
+          >
+            New York
+          </button>
+          <button
+            onClick={() => setCity("Tokyo, Japan")}
+            className="px-3 py-1 bg-blue-500 text-white rounded text-sm"
+          >
+            Tokyo
+          </button>
+          <button
+            onClick={() => setCity(null)}
+            className="px-3 py-1 bg-gray-500 text-white rounded text-sm"
+          >
+            Clear
+          </button>
+        </div>
         <div className="text-sm text-gray-600">
-          都市数: <span className="font-semibold">{cities.length}</span>
+          現在の都市: <span className="font-semibold">{city || "(なし)"}</span>
         </div>
       </div>
     );
